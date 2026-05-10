@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HostPro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">HostPro</div>
+
+    <nav>
+      <a href="#" onclick="openModal('hostingModal')">Hosting</a>
+      <a href="#" onclick="openModal('vpsModal')">VPS</a>
+      <a href="#" onclick="openModal('domenyModal')">Domeny</a>
+      <a href="#" onclick="openModal('pomocModal')">Pomoc</a>
+      <a href="#" onclick="openModal('onasModal')">O nas</a>
+      <a href="#" onclick="openModal('kontaktModal')">Kontakt</a>
+    </nav>
+
+    <div>
+      <a href="#login" class="btn-secondary">Panel klienta</a>
+      <a href="#" class="btn-primary">Zamów teraz</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 class="hero-title">Hosting, który wspiera <span>Twój rozwój</span></h1>
+  <p>Wydajny hosting SSD NVMe, gwarancja 99.9% uptime i wsparcie techniczne 24/7. Skup się na rozwoju swojej strony, a my zajmiemy się resztą.</p>
+
+  <div style="margin-top: 25px;">
+    <a href="#" class="btn-primary">Zobacz ofertę</a>
+    <a href="#" class="btn-secondary">Sprawdź domeny</a>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <h2>Wybierz idealny plan dla siebie</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Start</h3>
+      <div class="price">14.99 zł/mies.</div>
+      <ul>
+        <li>10 GB SSD NVMe</li>
+        <li>1 strona WWW</li>
+        <li>1 domena</li>
+        <li>SSL Let's Encrypt</li>
+        <li>Wsparcie 24/7</li>
+      </ul>
+      <a href="#" class="btn-secondary">Wybierz plan</a>
+    </div>
+
+    <div class="card featured">
+      <h3>Pro</h3>
+      <div class="price">29.99 zł/mies.</div>
+      <ul>
+        <li>50 GB SSD NVMe</li>
+        <li>Nielimitowane strony</li>
+        <li>Nielimitowane domeny</li>
+        <li>Darmowe backupy</li>
+        <li>Priorytetowe wsparcie</li>
+      </ul>
+      <a href="#" class="btn-primary">Wybierz plan</a>
+    </div>
+
+    <div class="card">
+      <h3>Premium</h3>
+      <div class="price">59.99 zł/mies.</div>
+      <ul>
+        <li>100 GB SSD NVMe</li>
+        <li>Nielimitowane strony</li>
+        <li>Nielimitowane domeny</li>
+        <li>Backupy + Restore</li>
+        <li>Priorytetowe wsparcie</li>
+      </ul>
+      <a href="#" class="btn-secondary">Wybierz plan</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features">
+  <div class="container grid">
+    <div>
+      <div class="feature-icon">⚡</div>
+      <div class="feature-title">Maksymalna szybkość</div>
+      <div class="feature-desc">Serwery SSD NVMe zapewniają najwyższą wydajność.</div>
+    </div>
+
+    <div>
+      <div class="feature-icon">🔒</div>
+      <div class="feature-title">Bezpieczeństwo</div>
+      <div class="feature-desc">Zaawansowane zabezpieczenia i automatyczne backupy.</div>
+    </div>
+
+    <div>
+      <div class="feature-icon">🌍</div>
+      <div class="feature-title">Globalne centra danych</div>
+      <div class="feature-desc">Twoja strona działa szybko w każdym miejscu świata.</div>
+    </div>
+
+    <div>
+      <div class="feature-icon">📞</div>
+      <div class="feature-title">Wsparcie 24/7</div>
+      <div class="feature-desc">Nasz zespół jest dostępny o każdej porze.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="login">
+  <div class="container">
+    <h2>Panel klienta</h2>
+
+    <div class="auth-switch" style="margin: 20px 0;">
+      <button class="btn" onclick="showLogin()">Logowanie</button>
+      <button class="btn" onclick="showRegister()">Rejestracja</button>
+    </div>
+
+    <form id="loginForm" class="login-form" onsubmit="login(event)">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Hasło" required>
+      <button class="btn">Zaloguj</button>
+    </form>
+
+    <form id="registerForm" class="login-form hidden" onsubmit="register(event)">
+      <input type="text" placeholder="Imię" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Hasło" required>
+      <button class="btn">Utwórz konto</button>
+    </form>
+
+    <p id="msg"></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2026 HostPro</p>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div id="hostingModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('hostingModal')">&times;</span>
+    <h2>Hosting</h2>
+    <p>Oferujemy wydajny hosting SSD NVMe z gwarancją 99.9% uptime. Nasze serwery zapewniają szybkie ładowanie stron i niezawodność.</p>
+    <ul>
+      <li>SSD NVMe dyski dla maksymalnej prędkości</li>
+      <li>99.9% gwarancji dostępności</li>
+      <li>Wsparcie techniczne 24/7</li>
+      <li>Automatyczne backupy</li>
+      <li>cPanel do zarządzania hostingiem</li>
+    </ul>
+  </div>
+</div>
+
+<div id="vpsModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('vpsModal')">&times;</span>
+    <h2>VPS (Virtual Private Server)</h2>
+    <p>Wirtualne serwery dedykowane dla wymagających aplikacji. Pełna kontrola nad środowiskiem serwerowym.</p>
+    <ul>
+      <li>Pełna kontrola root</li>
+      <li>Dedykowane zasoby CPU i RAM</li>
+      <li>Możliwość instalacji dowolnego oprogramowania</li>
+      <li>SSD NVMe storage</li>
+      <li>Zarządzanie przez panel kontrolny</li>
+    </ul>
+  </div>
+</div>
+
+<div id="domenyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('domenyModal')">&times;</span>
+    <h2>Domeny</h2>
+    <p>Rejestracja i zarządzanie domenami internetowymi. Szeroki wybór rozszerzeń i konkurencyjne ceny.</p>
+    <ul>
+      <li>Rejestracja domen .pl, .com, .eu, .org</li>
+      <li>Przeniesienie domeny do nas</li>
+      <li>Zarządzanie DNS</li>
+      <li>Ochrona prywatności WHOIS</li>
+      <li>Automatyczne odnawianie</li>
+    </ul>
+  </div>
+</div>
+
+<div id="pomocModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('pomocModal')">&times;</span>
+    <h2>Pomoc</h2>
+    <p>Nasze centrum pomocy zawiera odpowiedzi na najczęściej zadawane pytania oraz szczegółowe poradniki.</p>
+    <ul>
+      <li>Baza wiedzy z poradnikami</li>
+      <li>FAQ - najczęściej zadawane pytania</li>
+      <li>Poradniki konfiguracji</li>
+      <li>Rozwiązywanie problemów</li>
+      <li>Kontakt z wsparciem technicznym</li>
+    </ul>
+  </div>
+</div>
+
+<div id="onasModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('onasModal')">&times;</span>
+    <h2>O nas</h2>
+    <p>HostPro to wiodący dostawca usług hostingowych w Polsce. Od 2010 roku pomagamy firmom i osobom prywatnym w rozwoju ich obecności w internecie.</p>
+    <ul>
+      <li>Założona w 2010 roku</li>
+      <li>Ponad 10 000 zadowolonych klientów</li>
+      <li>Własna infrastruktura serwerowa</li>
+      <li>Certyfikowane centrum danych</li>
+      <li>Zespół doświadczonych specjalistów</li>
+    </ul>
+  </div>
+</div>
+
+<div id="kontaktModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('kontaktModal')">&times;</span>
+    <h2>Kontakt</h2>
+    <p>Skontaktuj się z nami w dowolny sposób. Jesteśmy dostępni 24/7 dla naszych klientów.</p>
+    <div class="contact-info">
+      <p><strong>Email:</strong> kontakt@hostpro.pl</p>
+      <p><strong>Telefon:</strong> +48 123 456 789</p>
+      <p><strong>Godziny pracy:</strong> 24/7</p>
+      <p><strong>Adres:</strong> ul. Hostingowa 123, 00-001 Warszawa</p>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+
+<script src="firebase-config.js"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>
